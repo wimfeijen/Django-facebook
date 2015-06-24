@@ -81,12 +81,11 @@ Now, add this line to your url config::
 
 **4.) Update your models**
 
-The following step depends on your version of Django. Django versions before 1.5 need to use a custom profile model.
-Whereas Django 1.5 and up can use a custom user model.
+Depending on your version of Django, you need to define either a custom user model or a custom profile model. 
 
-**A. Custom user model**
+**A. Django version 1.5 and up: Custom user model. **
 
-If you don't already have a custom user model, simply uses the provided model by setting your AUTH_USER_MODEL to FacebookCustomUser::
+If you don't already have a custom user model, simply use the provided model by setting your AUTH_USER_MODEL to FacebookCustomUser::
 
     AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
 
@@ -95,7 +94,7 @@ Alternatively use the abstract model provided in django_facebook.models.Facebook
 .. note::
     Please note that Django Facebook does not support custom user models with ``USERNAME_FIELD`` different than ``username``.
 
-**B. Profile model**
+**B. Django version 1.4 and prior: Profile model**
 
 If you don't already have a custom Profile model, simply uses the provided model by setting your AUTH_PROFILE_MODULE to FacebookProfile::
 
